@@ -56,14 +56,20 @@ The data was preprocessed by reviewing the available variables.
     o	EIN
     o	NAME
 
+![Preprocessing - Original Model](Images/Image1.PNG)
+
 •	Binning
     The data preprocessing also included creating bins for two specific variables by creating cutoff values for value counts of the underlying categories, and creating a bin called Other to store the categories with a value count of less than the cutoff value.
 
     o	APPLICATION_TYPE
     This variable was binned into 9 categories by creating a cutoff value of 500.
 
+![Binning - Original Model](Images/Image2.PNG)
+
     o	CLASSIFICATION
     This variable was binned into 6 categories by creating a cutoff value of 1000.
+
+![Binning - Original Model](Images/Image3.PNG)
 
 **Compiling, Training, and Evaluating the Model:**
 After preprocessing the data, the model was compiled, trained and evaluated by defining the following details:
@@ -74,14 +80,22 @@ After preprocessing the data, the model was compiled, trained and evaluated by d
 •	*Activation Functions*
     Relu activation function was used for the hidden layers, whereas Sigmoid activation function was used for the output layer.
 
+![Layers and Actication Functions - Original Model](Images/Image4.PNG)
+
 •	*Parameters*
     The model was trained based on a total of 5,981 parameters.
+
+![Parameters - Original Model](Images/Image5.PNG)
 
 •	*Epochs*
     The model was then fitted and trained by using 100 epochs.
 
+![Epochs - Original Model](Images/Image6.PNG)
+
 •	*Model Performance*
     This model was evaluated to have an accuracy score of 72.87% which is below the target performance of 75%.
+
+![Performance - Original Model](Images/Image7.PNG)
 
 
 ### OPTIMIZED MODEL:
@@ -120,17 +134,25 @@ The data was preprocessed by reviewing the available variables.
     Only one variable was removed (as compared to two in the original model) from the input data as it is neither target nor feature:
     o	EIN
 
+![Preprocessing - Optimized Model](Images/Image8.PNG)
+
 •	*Binning*
 The data preprocessing also included creating bins for three specific variables (as compared to two variables in the original data) by creating cutoff values for value counts of the underlying categories, and creating a bin called Other to store the categories with a value count of less than the cutoff value.
 
     o	NAME
     This variable was binned into various categories by creating a cutoff value of 10. Please note that this was not binned in the original model.
 
+![Binning - Optimized Model](Images/Image9.PNG)
+
     o	APPLICATION_TYPE
     This variable was binned into 9 categories by creating a cutoff value of 500 which is similar to the original model.
 
+![Binning - Optimized Model](Images/Image10.PNG)
+
     o	CLASSIFICATION
     This variable was binned into 7 categories by creating a cutoff value of 500. The original model had 6 categories based on cutoff value of 1000.
+
+![Binning - Optimized Model](Images/Image11.PNG)
 
 **Compiling, Training, and Evaluating the Model:**
 After preprocessing the data, the model was compiled, trained and evaluated by defining the following details:
@@ -141,14 +163,22 @@ After preprocessing the data, the model was compiled, trained and evaluated by d
 •	*Activation Functions*
     Relu activation function was used for the hidden layers, whereas Sigmoid activation function was used for the output layer.
 
+![Layers and Actication Functions - Optimized Model](Images/Image12.PNG)
+
 •	*Parameters*
     The model was trained based on a total of 9,487 parameters.
+
+![Parameters - Optimized Model](Images/Image13.PNG)
 
 •	*Epochs*
     The model was then fitted and trained by using 100 epochs.
  
+![Epochs - Optimized Model](Images/Image14.PNG)
+
 •	*Model Performance*
     This optimized model was evaluated to have an accuracy score of 77.87% which is above the target performance of 75% and 5% higher than the original model.
+
+![Performance - Optimized Model](Images/Image15.PNG)
 
 
 ## Summary:
