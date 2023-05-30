@@ -9,17 +9,17 @@ This report is prepared for Alphabet Soup which is a nonprofit foundation. The r
 
 The analysis is based on the CSV provided by the business team at Alphabet Soup. The CSV contains more than 34,000 organizations that have received funding from the foundation over the years. Within this dataset are a number of columns that capture metadata about each organization, such as:
 
-•	EIN and NAME – Identification columns
-•	APPLICATION_TYPE – Alphabet Soup application type
-•	AFFILIATION – Affiliated sector of industry
-•	CLASSIFICATION – Government organization classification
-•	USE_CASE – Use case for funding
-•	ORGANIZATION – Organization type
-•	STATUS – Active status
-•	INCOME_AMT – Income classification
-•	SPECIAL_CONSIDERATIONS – Special considerations for application
-•	ASK_AMT – Funding amount requested
-•	IS_SUCCESSFUL – Was the money used effectively
+•	EIN and NAME – Identification columns       
+•	APPLICATION_TYPE – Alphabet Soup application type      
+•	AFFILIATION – Affiliated sector of industry            
+•	CLASSIFICATION – Government organization classification              
+•	USE_CASE – Use case for funding                  
+•	ORGANIZATION – Organization type                
+•	STATUS – Active status                 
+•	INCOME_AMT – Income classification              
+•	SPECIAL_CONSIDERATIONS – Special considerations for application             
+•	ASK_AMT – Funding amount requested              
+•	IS_SUCCESSFUL – Was the money used effectively             
 
 I have used the features in the provided dataset to create a binary classifier that can predict whether applicants will be successful if funded by the foundation.
 
@@ -32,41 +32,41 @@ Following are the steps taken to create each of the models:
 
 This neural network model was created by completing the following steps:
 
-**Data Preprocessing:**
-The data was preprocessed by reviewing the available variables.
+**Data Preprocessing:**                
+The data was preprocessed by reviewing the available variables.        
 
-•	*Target Variable*
-    The target variable in this model is:
+•	*Target Variable*            
+    The target variable in this model is:              
     o	IS_SUCCESSFUL
 
-•	*Feature Variables*
-    The feature variables used for the model include:
-    o	APPLICATION_TYPE
-    o	AFFILIATION
-    o	CLASSIFICATION
-    o	USE_CASE
-    o	ORGANIZATION
-    o	STATUS
-    o	INCOME_AMT
-    o	SPECIAL_CONSIDERATIONS
-    o	ASK_AMT
+•	*Feature Variables*                    
+    The feature variables used for the model include:                       
+    o	APPLICATION_TYPE               
+    o	AFFILIATION                      
+    o	CLASSIFICATION                  
+    o	USE_CASE                  
+    o	ORGANIZATION                     
+    o	STATUS               
+    o	INCOME_AMT                  
+    o	SPECIAL_CONSIDERATIONS                  
+    o	ASK_AMT                
 
-•	*Removed Variables*
-    Following variables were removed from the input data as these are neither targets nor features:
-    o	EIN
-    o	NAME
+•	*Removed Variables*                 
+    Following variables were removed from the input data as these are neither targets nor features:                           
+    o	EIN                   
+    o	NAME                         
 
 ![Preprocessing - Original Model](Images/Image1.PNG)
 
-•	Binning
+•	Binning                          
     The data preprocessing also included creating bins for two specific variables by creating cutoff values for value counts of the underlying categories, and creating a bin called Other to store the categories with a value count of less than the cutoff value.
 
-    o	APPLICATION_TYPE
+    o	APPLICATION_TYPE                       
     This variable was binned into 9 categories by creating a cutoff value of 500.
 
 ![Binning - Original Model](Images/Image2.PNG)
 
-    o	CLASSIFICATION
+    o	CLASSIFICATION                       
     This variable was binned into 6 categories by creating a cutoff value of 1000.
 
 ![Binning - Original Model](Images/Image3.PNG)
@@ -74,25 +74,25 @@ The data was preprocessed by reviewing the available variables.
 **Compiling, Training, and Evaluating the Model:**
 After preprocessing the data, the model was compiled, trained and evaluated by defining the following details:
 
-•	*Neuron Layers*
+•	*Neuron Layers*                      
     There were two hidden layers and an output layer created in this model.  The first hidden layer contained 80 neurons and the second layer had 30 neurons. 
 
-•	*Activation Functions*
+•	*Activation Functions*                        
     Relu activation function was used for the hidden layers, whereas Sigmoid activation function was used for the output layer.
 
 ![Layers and Actication Functions - Original Model](Images/Image4.PNG)
 
-•	*Parameters*
+•	*Parameters*                        
     The model was trained based on a total of 5,981 parameters.
 
 ![Parameters - Original Model](Images/Image5.PNG)
 
-•	*Epochs*
+•	*Epochs*                        
     The model was then fitted and trained by using 100 epochs.
 
 ![Epochs - Original Model](Images/Image6.PNG)
 
-•	*Model Performance*
+•	*Model Performance*                   
     This model was evaluated to have an accuracy score of 72.87% which is below the target performance of 75%.
 
 ![Performance - Original Model](Images/Image7.PNG)
@@ -110,72 +110,72 @@ In order to improve the accuracy of the original model, following steps were tak
 
 This optimized neural network model was created by completing the following steps:
 
-**Data Preprocessing:**
+**Data Preprocessing:**                      
 The data was preprocessed by reviewing the available variables.
 
-•	*Target Variable*
-    The target variable in this model is:
+•	*Target Variable*                 
+    The target variable in this model is:                
     o	IS_SUCCESSFUL
 
-•	*Feature Variables*
-    The feature variables used for the model include:
-        o	NAME
-        o	APPLICATION_TYPE
-        o	AFFILIATION
-        o	CLASSIFICATION
-        o	USE_CASE
-        o	ORGANIZATION
-        o	STATUS
-        o	INCOME_AMT
-        o	SPECIAL_CONSIDERATIONS
-        o	ASK_AMT
+•	*Feature Variables*                  
+    The feature variables used for the model include:                  
+        o	NAME              
+        o	APPLICATION_TYPE                  
+        o	AFFILIATION                     
+        o	CLASSIFICATION                   
+        o	USE_CASE                     
+        o	ORGANIZATION                     
+        o	STATUS                   
+        o	INCOME_AMT                   
+        o	SPECIAL_CONSIDERATIONS                     
+        o	ASK_AMT                      
 
-•	*Removed Variables*
-    Only one variable was removed (as compared to two in the original model) from the input data as it is neither target nor feature:
-    o	EIN
+•	*Removed Variables*                     
+    Only one variable was removed (as compared to two in the original model) from the input data as it is neither target nor feature:                    
+    o	EIN                     
 
 ![Preprocessing - Optimized Model](Images/Image8.PNG)
 
-•	*Binning*
-The data preprocessing also included creating bins for three specific variables (as compared to two variables in the original data) by creating cutoff values for value counts of the underlying categories, and creating a bin called Other to store the categories with a value count of less than the cutoff value.
+•	*Binning*                        
+The data preprocessing also included creating bins for three specific variables (as compared to two variables in the original data) by creating cutoff values for value counts of the underlying categories, and creating a bin called Other to store the categories with a value count of less than the cutoff value.                
 
-    o	NAME
+    o	NAME                    
     This variable was binned into various categories by creating a cutoff value of 10. Please note that this was not binned in the original model.
 
 ![Binning - Optimized Model](Images/Image9.PNG)
 
-    o	APPLICATION_TYPE
+    o	APPLICATION_TYPE                          
     This variable was binned into 9 categories by creating a cutoff value of 500 which is similar to the original model.
 
 ![Binning - Optimized Model](Images/Image10.PNG)
 
-    o	CLASSIFICATION
+    o	CLASSIFICATION                       
     This variable was binned into 7 categories by creating a cutoff value of 500. The original model had 6 categories based on cutoff value of 1000.
 
 ![Binning - Optimized Model](Images/Image11.PNG)
 
-**Compiling, Training, and Evaluating the Model:**
+**Compiling, Training, and Evaluating the Model:**                   
 After preprocessing the data, the model was compiled, trained and evaluated by defining the following details:
 
-•	*Neuron Layers*
+•	*Neuron Layers*                       
     There were three hidden layers (as compared to two in the original model) and an output layer created in this model.  The first hidden layer contained 30 neurons, the second layer had 27 and the third layer had 21 neurons. 
 
-•	*Activation Functions*
+•	*Activation Functions*                         
     Relu activation function was used for the hidden layers, whereas Sigmoid activation function was used for the output layer.
 
 ![Layers and Actication Functions - Optimized Model](Images/Image12.PNG)
 
-•	*Parameters*
+•	*Parameters*                      
     The model was trained based on a total of 9,487 parameters.
 
 ![Parameters - Optimized Model](Images/Image13.PNG)
 
-•	*Epochs*
+•	*Epochs*                    
     The model was then fitted and trained by using 100 epochs.
  
 ![Epochs - Optimized Model](Images/Image14.PNG)
 
-•	*Model Performance*
+•	*Model Performance*                        
     This optimized model was evaluated to have an accuracy score of 77.87% which is above the target performance of 75% and 5% higher than the original model.
 
 ![Performance - Optimized Model](Images/Image15.PNG)
